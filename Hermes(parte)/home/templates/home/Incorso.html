@@ -1,0 +1,55 @@
+{% extends "home/template.html" %}
+{% block content %}
+    <head>
+
+ </head>
+<body>
+<div class="type">
+		<span>Ordini in corso</span>
+</div>
+
+<div class="wrapper">
+<div class="table">
+<div class="row header blue">
+      <div class="cell">
+        Piatto
+      </div>
+      <div class="cell">
+        Tavolo
+      </div>
+      <div class="cell">
+        Richiesto
+      </div>
+      <div class="cell">
+        Cotto
+      </div>
+    <div class="cell">
+        Consegnato
+      </div>
+    </div>
+{% for o in ordinazioni %}
+    <div class="row">
+
+      <div class="cell">
+       {{ o.nome_piatto }}
+      </div>
+      <div class="cell">
+        {{ o.tavolo }}
+      </div>
+      <div class="cell">
+       {{ o.orario_richiesta }}
+      </div>
+      <div class="cell">
+        {{ o.orario_cottura}}
+      </div>
+        <div class="cell">
+        <a href="/invio/{{o.id}}">{{ o.orario_consegna }}</a>
+      </div>
+    </div>
+{% endfor %}
+    </div>
+    </div>
+
+</body>
+
+{% endblock content%}

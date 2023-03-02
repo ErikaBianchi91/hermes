@@ -1,0 +1,62 @@
+{% extends "home/template.html" %}
+{% block content %}
+    <head>
+
+
+    </head>
+
+<body>
+
+<div class="type">
+		<span>Cucina</span>
+</div>
+
+<div class="wrapper">
+
+<div class="table">
+
+<div class="row header blue" >
+
+      <div class="cell">
+        Piatto
+      </div>
+
+      <div class="cell">
+        Tavolo
+      </div>
+
+      <div class="cell">
+        Richiesto
+      </div>
+
+      <div class="cell">
+        Cotto
+      </div>
+
+    </div>
+{% for t in ordinazioni %}
+    <div class="row">
+
+      <div class="cell">
+       {{ t.nome_piatto }}
+      </div>
+
+      <div class="cell">
+        {{ t.tavolo }}
+      </div>
+
+      <div class="cell">
+       {{ t.orario_richiesta }}
+      </div>
+
+        <div class="cell">
+       <a href="/cottura/{{ t.id}}">{{ t.orario_cottura }}</a>
+      </div>
+
+    </div>
+{% endfor %}
+    </div>
+</div>
+</body>
+
+{% endblock content%}
