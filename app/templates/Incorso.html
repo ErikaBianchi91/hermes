@@ -1,0 +1,36 @@
+{% extends "template.html" %} {% block content %}
+<head> </head>
+<body>
+	<div class="type">
+		<span>Ordini in corso</span>
+	</div>
+
+	<div class="wrapper">
+		<div class="table">
+			<div class="row header blue">
+				<div class="cell">Piatto</div>
+				<div class="cell">Tavolo</div>
+				<div class="cell">Richiesto</div>
+				<div class="cell">inizio cottura</div>
+				<div class="cell">fine cottura</div>
+				<div class="cell">Consegnato</div>
+			</div>
+			{% for o in orders %}
+			<div class="row">
+				<div class="cell">{{ o.dish_name }}</div>
+				<div class="cell">{{ o.table }}</div>
+				<div class="cell">{{ o.request_time }}</div>
+				<div class="cell">{{ o.kitchen_start_time}}</div>
+				<div class="cell">{{ o.kitchen_end_time}}</div>
+				<div class="cell">
+					<a href="/closeOrder/{{o.id}}">Deliver</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<a href="/home/">Go back to Home Page</a>
+</body>
+
+{% endblock content%}

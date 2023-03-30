@@ -1,0 +1,54 @@
+
+{% extends "template.html" %}
+{% load static %}
+{% block content %}
+
+  <div class="type">
+      <span>Dishes</span>
+  </div>
+
+  <div class="wrapper">
+    <div class="table">
+      <div class="row header blue">
+            <div class="cell">
+              Type
+            </div>
+            <div class="cell">
+              Name
+            </div>
+            <div class="cell">
+              Gluten
+            </div>
+            <div class="cell">
+            Lactose
+            </div>
+      </div>
+    {% for d in dishes %}
+      <div class="row">
+
+        <div class="cell">
+          {{ d.type }}
+        </div>
+        <div class="cell">
+          <a href=# class="special" id='{{d.id}}' > {{d.name}}</a></li>
+        </div>
+        <div class="cell">
+          {% if d.gluten %}
+          with gluten
+          {% else %}
+          gluten free
+          {% endif %}
+        </div>
+        <div class="cell">
+          {% if d.lactose %}
+          with lactose
+          {% else %}
+          lactose free
+          {% endif %}
+        </div>
+      </div>
+  {% endfor %}
+  </div>
+  <a href="/home/"> Order completed</a>
+
+{% endblock content%}

@@ -1,0 +1,143 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #d4e5f2;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: #000000;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman';
+}
+
+p,
+ol,
+ul {
+  margin-top: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  line-height: 180%;
+}
+
+strong {
+}
+
+a {
+  color: #151515;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  overflow: hidden;
+  margin: 0em auto;
+  width: 1000px;
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+#header-wrapper {
+  overflow: hidden;
+}
+
+#header {
+  overflow: hidden;
+  position: relative;
+  padding: 5em 0em;
+}
+
+/*********************************************************************************/
+/*table                                                                   */
+/*********************************************************************************/
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background: #f6f6f6;
+}
+.row:nth-of-type(odd) {
+  background: #e9e9e9;
+}
+
+.row.blue {
+  background: #2980b9;
+}
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 8px 0;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  display: table-cell;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 12px;
+    display: block;
+  }
+}
+/*********************************************************************************/
+/*text                                                          */
+/*********************************************************************************/
+
+.type span {
+  display: block;
+}
+
+.type span {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-size: 70px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 5px 0 0 #2980b9, -5px 0 0 #2980b9, 0 5px 0 #2980b9,
+    0 -5px 0 #2980b9, 4px 4px #2980b9, -4px -4px 0 #2980b9, 4px -4px 0 #2980b9,
+    -4px 4px 0 #2980b9;
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  color: #fff;
+  margin-top: -5px;
+}

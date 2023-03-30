@@ -1,0 +1,10 @@
+{% extends "template.html" %} {% block content %}
+<div class="type">
+	<span>Open a new request</span>
+</div>
+{% for t in table_available %}
+<li>
+	<a href="/open/{{t.number}}"> Table: {{t.number}}</a>
+</li>
+
+{% endfor %} {% endblock content%}

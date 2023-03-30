@@ -1,0 +1,11 @@
+{% extends "template.html" %} {% block content %}
+<div>
+	<span>Dishes ordered</span>
+</div>
+{% for d in dishesOrdered %}
+<li>{{d.dish_name}}</li>
+{% endfor %}
+<h1>Tot: {{b}}</h1>
+
+<a href="/clearTable/{{table}}"> Table: {{table}}</a>
+{% endblock content%}

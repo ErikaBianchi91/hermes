@@ -1,0 +1,48 @@
+{% extends "template.html" %} {% block content %}
+<head> </head>
+
+<body>
+	<div class="type">
+		<span>Kitchen</span>
+	</div>
+
+	<div class="wrapper">
+		<div class="table">
+			<div class="row header blue">
+				<div class="cell">Dish</div>
+
+				<div class="cell">Table</div>
+
+				<div class="cell">Request time</div>
+
+				<div class="cell">Start cooking</div>
+
+				<div class="cell">Cooked</div>
+			</div>
+			{% for t in orders %} {% if t.delivery_time == None %}
+			<div class="row">
+				<div class="cell">{{ t.dish_name }}</div>
+
+				<div class="cell">{{ t.table }}</div>
+
+				<div class="cell">{{ t.request_time }}</div>
+
+				<div class="cell">
+					{% if t.kitchen_start_time == None %}
+					<a href="/cooking/{{ t.id}}"> start cooking </a>
+					{% else %} {{t.kitchen_start_time}} {% endif %}
+				</div>
+
+				<div class="cell">
+					{% if t.kitchen_end_time == None %}
+					<a href="/cooked/{{ t.id}}"> finished </a>
+					{% endif %}
+				</div>
+			</div>
+			{% endif %} {% endfor %}
+		</div>
+	</div>
+	<a href="/home/">Go back to Home Page</a>
+</body>
+
+{% endblock content%}

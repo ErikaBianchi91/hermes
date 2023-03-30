@@ -1,0 +1,10 @@
+{% extends "template.html" %} {% block content %}
+<div class="type">
+	<span>Ceck out</span>
+</div>
+{% for t in tables %}
+<li>
+	<a href="/pay/{{t.table}}"> Table: {{t.table}}</a>
+</li>
+
+{% endfor %} {% endblock content%}
